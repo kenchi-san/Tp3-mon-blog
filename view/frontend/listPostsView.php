@@ -12,6 +12,7 @@ while ($data = $posts->fetch())
   <div class="card flex-md-row mb-4 box-shadow h-md-250">
     <div class="text-into-box">
       <div class="card-body d-flex flex-column align-items-start">
+      
         <strong class="d-inline-block mb-2 text-primary"><?= htmlspecialchars($data['title']) ?></strong>
           <div class="mb-1 text-muted"><em>le <?= $data['creation_date_fr'] ?></em>
           </div>

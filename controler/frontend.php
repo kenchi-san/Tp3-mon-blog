@@ -36,15 +36,34 @@ function addComment($postId, $author, $comment)
 
 function add_new_content($title, $content)
 {
-    $commentManager = new CommentManager();
-    $addcontents = $commentManager->insertpost($title, $content);
+    $postManager = new PostManager();
+    $addcontents = $postManager->insertpost($title, $content);
     
     if ($addcontents === false) {
         die('Impossible d\'ajouter l\'article !');
     } else {
         header('Location: index.php?action=listPosts');
     }
+}
+
+function editPost($id,$title,$content)
+{
+    $postManager = new PostManager();
+    $postedits = $postManager->editPosts($id,$title,$content);
+
+    if ($postedits === false) {
+        die('Impossible d\'ajouter l\'article !');
+    } else {
+        echo "ca fonctionne";
+    }
+}
+
+function editshow($id)
+{
+    $postmanager = new PostManager();
+    $currentPost = $postmanager->getPost($id);
     
+    require ('view/frontend/traitement_text.php');
     
 }
 
