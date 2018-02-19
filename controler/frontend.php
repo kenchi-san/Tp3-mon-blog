@@ -46,10 +46,11 @@ function add_new_content($title, $content)
     }
 }
 
-function editPost($id,$title,$content)
+function editPost($id)
 {
     $postManager = new PostManager();
-    $postedits = $postManager->editPosts($id,$title,$content);
+    $postedits = $postManager->editPosts($id);
+    var_dump($postedits);die;
 
     if ($postedits === false) {
         die('Impossible d\'ajouter l\'article !');
