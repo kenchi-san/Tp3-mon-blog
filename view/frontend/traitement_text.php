@@ -4,7 +4,7 @@
 <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
 <script>
   tinymce.init({
-    selector: '#contents'
+    selector: '#content'
   });
   </script>
 </head>
@@ -19,7 +19,7 @@
 		</div>
 		<div>
 			<label for="content">article</label><br />
-			<textarea id="contents" name="contents"><?= $currentPost['content'] ?></textarea>
+			<textarea id="content" name="content"><?= $currentPost['content'] ?></textarea>
 		</div>
 		<div>
 			<input type="submit" />

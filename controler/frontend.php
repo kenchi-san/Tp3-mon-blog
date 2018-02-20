@@ -46,10 +46,10 @@ function add_new_content($title, $content)
     }
 }
 
-function editPost($id)
+function editPost($id,$title,$content)
 {
     $postManager = new PostManager();
-    $postedits = $postManager->editPosts($id);
+    $postedits = $postManager->editPosts($id,$title,$content);
     var_dump($postedits);die;
 
     if ($postedits === false) {
@@ -65,7 +65,7 @@ function editshow($id)
     $currentPost = $postmanager->getPost($id);
     
     require ('view/frontend/traitement_text.php');
-    
+ 
 }
 
 function connectionMember()
