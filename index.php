@@ -32,8 +32,8 @@ switch ($action) {
         add_new_content($_POST['title'], $_POST['content']);
         break;
     
-    case 'editPost':
-        editPost($_GET['id'], $_POST['title'], $_POST['content']);
+    case 'postEdition':
+       postEdition($_GET['id'], $_POST['title'], $_POST['content']);
         break;
     
     case 'editshow':
