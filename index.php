@@ -20,12 +20,8 @@ switch ($action) {
         post();
         break;
     
-    case 'displaylogin':
-        displaylogin();
-        break;
-    
-    case 'connectionMember':
-        connectionMember();
+    case 'editshow':
+        editshow($_GET['id']);
         break;
     
     case 'add_new_content':
@@ -33,12 +29,22 @@ switch ($action) {
         break;
     
     case 'postEdition':
-       postEdition($_GET['id'], $_POST['title'], $_POST['content']);
+        postEdition($_GET['id'], $_POST['title'], $_POST['content']);
         break;
     
-    case 'editshow':
-        editshow($_GET['id']);
+    case 'postSupression':
+        postSupression($_GET['id']);
         break;
+    
+        
+        case 'displaylogin':
+        displaylogin();
+        break;
+    
+    case 'connectionMember':
+        connectionMember();
+        break;
+        
     default:
         listPosts();
         break;

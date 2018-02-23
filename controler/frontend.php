@@ -66,6 +66,14 @@ function editshow($id)
     require ('view/frontend/traitement_text.php');
 }
 
+function postSupression($id)
+{
+    $postmanager = new PostManager();
+    $supressionpost = $postmanager->supressionPosts($id);
+    header('Location: index.php?action=listPosts');
+    
+}
+
 function connectionMember()
 {
     $oMembersM = new MembersManager();

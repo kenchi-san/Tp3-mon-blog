@@ -43,12 +43,21 @@ class PostManager extends Manager
         $db = $this->dbconnect();
         $inputpost = $db->prepare('UPDATE posts SET title=:title, content=:content WHERE id=:id ');
         $reqs = $inputpost->execute(array(
-            'id'=>$id,
-            'title'=>$title,
-            'content'=>$content
-            
+            'id' => $id,
+            'title' => $title,
+            'content' => $content
+        
         ));
         return $reqs;
-        
+    }
+
+    public function supressionPosts($id)
+    {
+        $db = $this->dbConnect();
+        $addcontent = $db->prepare('DELETE FROM posts WHERE id=:id');
+        $addcontents = $addcontent->execute(array(
+            'id' => $id
+        ));
     }
 }
+
