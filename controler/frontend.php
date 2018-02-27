@@ -8,7 +8,9 @@ function listPosts()
 {
     $postsManager = new PostManager();
     $posts = $postsManager->getPosts();
-    require ('view/frontend/listPostsView.php');
+    //require ('view/frontend/listPostsView.php');
+    require ('view/backend/gestionBillet.php');
+    
 }
 
 function post()
@@ -42,7 +44,7 @@ function add_new_content($title, $content)
     if ($addcontents === false) {
         die('Impossible d\'ajouter l\'article !');
     } else {
-        header('Location: index.php?action=listPosts');
+        header('Location: view/backend/gestionBillet.php');
     }
 }
 
@@ -74,15 +76,15 @@ function postSupression($id)
     
 }
 
+
+function displaylogin()
+{
+    require ('view/backend/loginView.php');
+}
+
 function connectionMember()
 {
     $oMembersM = new MembersManager();
     
     $vRes = $oMembersM->sessionconect();
 }
-
-function displaylogin()
-{
-    require ('view/frontend/loginView.php');
-}
-

@@ -37,7 +37,7 @@ switch ($action) {
         break;
     
         
-        case 'displaylogin':
+    case 'displaylogin':
         displaylogin();
         break;
     

@@ -1,26 +1,25 @@
-<?php 
-require_once('model/Manager.php');
+<?php
+require_once ('model/Manager.php');
 
 class MembersManager extends Manager
 {
 
-   public function sessionconect()
-   {
-       
+    public function sessionconect()
+    {
         $db = $this->dbconnect();
-        $pwdi = $db->prepare('SELECT pass , mail FROM members where pass=:pass AND mail=:mail');
+        $pwdi = $db->prepare('SELECT pseudo,pass FROM members where pseudo=:pseudo AND pass=:pass');
         $pwdi->execute(array(
-        'pass' => $_POST['pass'],
-        'mail' => $_POST['mail']));
-         $result=$pwdi->fetch();
-         $pwdi->closeCursor();
-         if($result) {
-            return true;
-         } else {
-            return false;
-         }
-     
-   }
-    
+            'pseudo' => $_POST['username'],
+            'pass' => $_POST['pass']
+        ));
+        $result = $pwdi->fetch(PDO::FETCH_ASSOC);
+        $pwdi->closeCursor();
+        
+        if ($result == TRUE) {
+          header('Location: view/backend/gestionBillet.php');
+        } else {
+           echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez vérifier vos informations";
+        }
+    }
 }
 
