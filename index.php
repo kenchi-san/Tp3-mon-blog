@@ -36,7 +36,6 @@ switch ($action) {
         postSupression($_GET['id']);
         break;
     
-        
     case 'displaylogin':
         displaylogin();
         break;
@@ -44,7 +43,11 @@ switch ($action) {
     case 'connectionMember':
         connectionMember();
         break;
-        
+    
+    case 'gestionPosts':
+        gestionPosts();
+        break;
+    
     default:
         listPosts();
         break;

@@ -61,11 +61,7 @@
 						<p><?= nl2br($post['content']) ?></p>
 						<div class="container">
 					<div class="row">
-						<a href="index.php">Retour à la liste des billets </a> / <a
-							href="index.php?action=editshow&id=<?= $_GET['id'] ?>">modifier
-							mon article </a> / <a
-							href="index.php?action=postSupression&id=<?= $_GET['id'] ?>">supression
-							de l'article</a>
+						<a href="index.php">Retour à la liste des billets </a>
 					</div>
 				</div>
 			</div>

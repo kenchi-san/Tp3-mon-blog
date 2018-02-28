@@ -8,8 +8,8 @@ function listPosts()
 {
     $postsManager = new PostManager();
     $posts = $postsManager->getPosts();
-    //require ('view/frontend/listPostsView.php');
-    require ('view/backend/gestionBillet.php');
+    require ('view/frontend/listPostsView.php');
+  
     
 }
 
@@ -22,6 +22,7 @@ function post()
     $comments = $commentManager->getComments($_GET['id']);
     
     require ('view/frontend/postView.php');
+    
 }
 
 function addComment($postId, $author, $comment)
@@ -56,7 +57,7 @@ function postEdition($id, $title, $content)
     if ($postEditions === false) {
        die('Impossible d\'ajouter l\'article !');
    } else {
-       header('Location: index.php?action=listPosts');
+       header('Location: view/backend/gestionBillet.php');
    }
 }
 
@@ -72,7 +73,7 @@ function postSupression($id)
 {
     $postmanager = new PostManager();
     $supressionpost = $postmanager->supressionPosts($id);
-    header('Location: index.php?action=listPosts');
+    header('Location: view/backend/gestionBillet.php');
     
 }
 
@@ -87,4 +88,11 @@ function connectionMember()
     $oMembersM = new MembersManager();
     
     $vRes = $oMembersM->sessionconect();
+}
+
+function gestionPosts()
+{
+   $postsManager = new PostManager();
+   $listcourent = $postsManager->getPosts();
+    require ('view/backend/gestionBillet.php');
 }

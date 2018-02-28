@@ -16,7 +16,7 @@ class MembersManager extends Manager
         $pwdi->closeCursor();
         
         if ($result == TRUE) {
-          header('Location: view/backend/gestionBillet.php');
+          header('Location:index.php?action=gestionPosts');
         } else {
            echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez vérifier vos informations";
         }
