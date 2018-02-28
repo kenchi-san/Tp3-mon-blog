@@ -45,7 +45,7 @@ function add_new_content($title, $content)
     if ($addcontents === false) {
         die('Impossible d\'ajouter l\'article !');
     } else {
-        header('Location: view/backend/gestionBillet.php');
+        header('Location: index.php?action=gestionPosts');
     }
 }
 
@@ -57,7 +57,7 @@ function postEdition($id, $title, $content)
     if ($postEditions === false) {
        die('Impossible d\'ajouter l\'article !');
    } else {
-       header('Location: view/backend/gestionBillet.php');
+       header('Location: index.php?action=gestionPosts');
    }
 }
 
@@ -73,7 +73,7 @@ function postSupression($id)
 {
     $postmanager = new PostManager();
     $supressionpost = $postmanager->supressionPosts($id);
-    header('Location: view/backend/gestionBillet.php');
+    header('Location: index.php?action=gestionPosts');
     
 }
 
