@@ -41,7 +41,7 @@ switch ($action) {
         break;
     
     case 'connectionMember':
-        connectionMember();
+        connectionMember($_POST['username'],$_POST['pass']);
         break;
     
     case 'gestionPosts':

@@ -4,7 +4,7 @@ require_once ('model/Manager.php');
 class MembersManager extends Manager
 {
 
-    public function sessionconect()
+    public function sessionconect($username, $pass)
     {
         $db = $this->dbconnect();
         $pwdi = $db->prepare('SELECT pseudo,pass FROM members where pseudo=:pseudo AND pass=:pass');
@@ -15,11 +15,7 @@ class MembersManager extends Manager
         $result = $pwdi->fetch(PDO::FETCH_ASSOC);
         $pwdi->closeCursor();
         
-        if ($result == TRUE) {
-          header('Location:index.php?action=gestionPosts');
-        } else {
-           echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez vérifier vos informations";
-        }
+        
     }
 }
 
