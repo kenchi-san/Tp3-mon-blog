@@ -13,7 +13,7 @@ while ( $data=$listcourent->fetch())
 </td>
 <td class="hidden-xs"><?= $data['id']?></td>
 <td><?= $data['title']?></td>
-<td><?= $data['content']?></td>
+ <td><a href="index.php?action=postAdmin&id=<?= $data['id']?>"><?= $data['content']?></a></td>
 </tr>
 </tbody>
 

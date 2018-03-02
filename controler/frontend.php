@@ -22,6 +22,17 @@ function post()
     require ('view/frontend/postView.php');
 }
 
+function postAdmin()
+{
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
+    
+    $post = $postManager->getPost($_GET['id']);
+    $comments = $commentManager->getComments($_GET['id']);
+    
+    require ('view/backend/commentGestionView.php');
+}
+
 function addComment($postId, $author, $comment)
 {
     $commentManager = new CommentManager();
@@ -73,6 +84,14 @@ function postSupression($id)
     header('Location: index.php?action=gestionPosts');
 }
 
+/*
+ * function editShowComment($id)
+ * {
+ * $postmanager = new PostManager();
+ * $addcomment= $postmanager-> getComments($postId);
+ * require ('')
+ * }
+ */
 function displaylogin()
 {
     require ('view/backend/loginView.php');
@@ -81,15 +100,13 @@ function displaylogin()
 function connectionMember($username, $pass)
 {
     $oMembersM = new MembersManager();
-    $vRes = $oMembersM->sessionconect($username, $pass);
-     if(isset($_POST) && !empty($_POST['username']) && !empty($_POST['pass'])){
-         
-    header('Location:index.php?action=gestionPosts');
+    $checkConnection = $oMembersM->connect($username, $pass);
     
-      }else {
-      echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez vérifier vos informations";
-      }
-     
+    if ($checkConnection == TRUE) {
+        header('Location:index.php?action=gestionPosts');
+    } else {
+        echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez vérifier vos informations";
+    }
 }
 
 function gestionPosts()
