@@ -39,8 +39,5 @@ class CommentManager extends Manager
         
         return $comments;
     }
-
-    
-
-    
 }
+

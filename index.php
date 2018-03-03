@@ -1,5 +1,10 @@
 <?php
+session_start();
+
+
 require ('controler/frontend.php');
+require ('controler/backend.php');
+
 
 $action = "";
 if (! empty($_GET['action'])) {
@@ -58,7 +63,9 @@ switch ($action) {
         
     // verification dans la bdd si l'utilisateur hexiste
     case 'connectionMember':
-        connectionMember($_POST['username'], $_POST['pass']);
+        if ( !empty($_POST['username']) && !empty($_POST['pass']) ) {
+            connectionMember($_POST['username'], $_POST['pass']);
+        }
         break;
         
     // affichage des billets dans la page admin
