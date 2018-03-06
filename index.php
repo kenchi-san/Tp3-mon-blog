@@ -51,11 +51,20 @@ switch ($action) {
     case 'postSupression':
         postSupression($_GET['id']);
         break;
+        
         // introduit le commentaire dans un editeur text
     case 'editShowComment':
         editShowComment($_GET['id']);
         break;
         
+        //edit les commentaires dans la bdd
+    case 'commentEdition':
+        commentEdition($_GET['id'], $_POST['author'], $_POST['comment']);
+        break;
+// supprime le commentaire
+    case 'commentSupression':
+        commentSupression($_GET['id']);
+        break;
     // montre la page de connexion
     case 'displaylogin':
         displaylogin();

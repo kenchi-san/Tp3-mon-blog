@@ -50,14 +50,32 @@ function postSupression($id)
     header('Location: index.php?action=gestionPosts');
 }
 
-/*
- * function editShowComment($id)
- * {
- * $postmanager = new PostManager();
- * $addcomment= $postmanager-> getComments($postId);
- * require ('')
- * }
- */
+function editShowComment($id)
+{
+    $commentManager = new CommentManager();
+     $curentCom = $commentManager->getCom($id);
+    // var_dump($curentCom);die;
+
+       require ('view/backend/editionCommentView.php');
+}
+function commentEdition($id, $author, $comment)
+{
+   
+    $commentManager = new CommentManager();
+    $commentEditions = $commentManager->editionComment($id, $author, $comment);
+  // var_dump($commentEditions);die;
+    
+    header('Location: index.php?action=gestionPosts');
+  
+}
+
+function commentSupression($id)
+{
+    $commentManager = new CommentManager();
+    $supressioncomment = $commentManager->supressioncomments($id);
+    header('Location: index.php?action=gestionPosts');
+}
+
 function gestionPosts()
 {
     
@@ -68,12 +86,12 @@ function gestionPosts()
     
     $postsManager = new PostManager();
     $listcourent = $postsManager->getPosts();
+    
     require ('view/backend/gestionBillet.php');
 }
 
 function connectionMember($username, $pass)
 {
-    
     $oMembersM = new MembersManager();
     $checkConnection = $oMembersM->connect($username, $pass);
     
