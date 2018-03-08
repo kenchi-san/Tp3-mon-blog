@@ -20,6 +20,8 @@
 		<div class="col-md-10 col-md-offset-1">
 
 			<div class="panel panel-default panel-table">
+			<a href="index.php?action=listPost"><button
+									type="button" class="btn btn-sm btn-primary btn-create">retour à la page d'acceuil</button></a>
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col col-xs-6">

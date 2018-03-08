@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>le blog de l'écrivain</title>
+<title>le blog de l'ï¿½crivain</title>
 
 <!-- Bootstrap core CSS -->
 <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,11 +50,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="index.html">A propos
-							de l'auteur</a></li>
-					<li class="nav-item"><a class="nav-link" href="about.html">évènements</a>
-					</li>
-					<!--<li class="nav-item"><a class="nav-link" href="view/frontend/additionalPostView.php">ajouter un article</a></li> -->
+					
 					<li class="nav-item"><a href="index.php?action=displaylogin">se connecter</a></li>
 				</ul>
 			</div>

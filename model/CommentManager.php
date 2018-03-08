@@ -4,6 +4,39 @@ require_once ('model/Manager.php');
 class CommentManager extends Manager
 {
 
+    
+    
+    
+    
+    
+    
+    
+    public function postComment($postId, $author, $comment)
+    {
+        $db = $this->dbConnect();
+        $Comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(:post_id,:author,:comment, NOW())');
+        $affectedLines = $Comments->execute(array(
+            'post_id'=>$_GET['id'],
+            'author'=>$_POST['author'],
+            'comment'=>$_POST['comment']
+        ));
+        
+        return $affectedLines;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      *
      * @param int $postId
@@ -12,19 +45,24 @@ class CommentManager extends Manager
      * @throws Exception
      * @return boolean
      */
-    public function postComment($id, $author, $comment)
+/*public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comments(id,post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array(
-            $id,
+        $Comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?,?,?, NOW())');
+        $affectedLines = $Comments->execute(array(
+            $postId,
             $author,
             $comment
         ));
-        // var_dump($affectedLines);die;
+        
         return $affectedLines;
-    }
+    }*/
 
+    /**
+     *
+     * @param int $postId
+     * @return PDOStatement
+     */
     public function getComments($postId)
     {
         $db = $this->dbConnect();
@@ -36,6 +74,11 @@ class CommentManager extends Manager
         return $comments;
     }
 
+    /**
+     *
+     * @param int $id
+     * @return boolean
+     */
     public function getCom($id)
     {
         $db = $this->dbConnect();
@@ -50,6 +93,13 @@ class CommentManager extends Manager
         return $comment;
     }
 
+    /**
+     *
+     * @param int $id
+     * @param string $author
+     * @param string $comment
+     * @return boolean
+     */
     public function editionComment($id, $author, $comment)
     {
         $db = $this->dbconnect();
@@ -64,6 +114,10 @@ class CommentManager extends Manager
         return $commentedit;
     }
 
+    /**
+     *
+     * @param int $id
+     */
     public function supressioncomments($id)
     {
         $db = $this->dbConnect();
@@ -72,6 +126,18 @@ class CommentManager extends Manager
             'id' => $id
         ));
     }
+    
+      public function reportComments($id)
+      {
+      $db = $this->dbconnect();
+      $inputcomment = $db->prepare('UPDATE comments SET repport=? WHERE id=? ');
+      $repporting = $inputcomment->execute(array(
+      $repport
+      ));
+     
+      return $repporting;
+      }
+     
 }
 
 

@@ -75,7 +75,13 @@ function commentSupression($id)
     $supressioncomment = $commentManager->supressioncomments($id);
     header('Location: index.php?action=gestionPosts');
 }
-
+function reportcomment($id)
+{
+    $commentManager = new CommentManager();
+    $commentReport = $commentManager->reportComments($id);
+    var_dump($commentReport);die;
+    header('Location: index.php?action=post&id=' . $id);
+}
 function gestionPosts()
 {
     
@@ -98,6 +104,6 @@ function connectionMember($username, $pass)
     if ($checkConnection == TRUE) {
         header('Location:index.php?action=gestionPosts');
     } else {
-        echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez vérifier vos informations";
+        echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez vï¿½rifier vos informations";
     }
 }

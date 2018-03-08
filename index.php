@@ -61,10 +61,17 @@ switch ($action) {
     case 'commentEdition':
         commentEdition($_GET['id'], $_POST['author'], $_POST['comment']);
         break;
+        
 // supprime le commentaire
     case 'commentSupression':
         commentSupression($_GET['id']);
         break;
+        
+        //envoi le le commentaire repporté dans le backoffice
+    case 'reportcomment':
+        reportcomment($_GET['id']);
+        break;
+        
     // montre la page de connexion
     case 'displaylogin':
         displaylogin();

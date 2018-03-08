@@ -61,7 +61,9 @@
 						<p><?= nl2br($post['content']) ?></p>
 						<div class="container">
 					<div class="row">
-						<a href="index.php">Retour à la liste des billets </a>
+					<a href="index.php"><button
+									type="button" class="btn btn-sm btn-primary btn-create">Retour à la liste des billets</button></a>
+						
 					</div>
 				</div>
 			</div>
@@ -76,11 +78,12 @@ while ($comment = $comments->fetch()) {
     ?>
 <p>
 		<strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-	<p><?= nl2br($comment['comment']) ?></p>
+	<p><?= nl2br($comment['comment']) ?><a href="index.php?action=reportcomment&id=<?=$_GET['id']?>" ><button type="button" class="btn btn-danger">repport</button></a></p>
+	
 <?php
 }
 ?>
-<form action="index.php?action=addComment&amp;id=<?= $_GET['id'] ?>"
+<form action="index.php?action=addComment&id=<?= $_GET['id'] ?>"
 		method="post">
 		<div>
 			<label for="author">Auteur</label><br /> <input type="text"
@@ -93,6 +96,7 @@ while ($comment = $comments->fetch()) {
 		<div>
 			<input type="submit" />
 		</div>
+		
 	</form>
 <?php $content = ob_get_clean(); ?>
 

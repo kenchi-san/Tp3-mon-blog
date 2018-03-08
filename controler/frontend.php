@@ -30,6 +30,12 @@ function addComment($postId, $author, $comment)
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
     
     if ($affectedLines === false) {
+        echo $postId;
+       
+        echo $author;
+        echo $comment;
+       
+        
         die('Impossible d\'ajouter le commentaire !');
     } else {
         header('Location: index.php?action=post&id=' . $postId);
