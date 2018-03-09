@@ -13,7 +13,7 @@ while ($data = $posts->fetch())
 						<h3 class="post-subtitle"><?= nl2br($data['content']) ?></h3>
 					</a>
 					<p class="post-meta ">
-						écrit le <?= $data['creation_date_fr'] ?>
+						Ã©crit le <?= $data['creation_date_fr'] ?>
 					</p>
 					<hr>
 <?php

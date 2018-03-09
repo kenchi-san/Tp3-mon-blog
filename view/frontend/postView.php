@@ -78,7 +78,7 @@ while ($comment = $comments->fetch()) {
     ?>
 <p>
 		<strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-	<p><?= nl2br($comment['comment']) ?><a href="index.php?action=reportcomment&id=<?=$_GET['id']?>" ><button type="button" class="btn btn-danger">repport</button></a></p>
+	<p><?= nl2br($comment['comment']) ?><a href="index.php?action=reportcomment&id=<?=$_GET['id']?>&repport=<?=$comment['id']?>" ><button type="button" class="btn btn-danger">repport</button></a></p>
 	
 <?php
 }

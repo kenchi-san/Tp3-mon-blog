@@ -3,61 +3,28 @@ require_once ('model/Manager.php');
 
 class CommentManager extends Manager
 {
-
-    
-    
-    
-    
-    
-    
-    
+/**
+ * 
+ * @param int $postId
+ * @param string $author
+ * @param string $comment
+ * @return boolean
+ */
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
         $Comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(:post_id,:author,:comment, NOW())');
         $affectedLines = $Comments->execute(array(
-            'post_id'=>$_GET['id'],
-            'author'=>$_POST['author'],
-            'comment'=>$_POST['comment']
+            'post_id' => $_GET['id'],
+            'author' => $_POST['author'],
+            'comment' => $_POST['comment']
         ));
         
         return $affectedLines;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /**
-     *
-     * @param int $postId
-     * @param string $author
-     * @param string $comment
-     * @throws Exception
-     * @return boolean
-     */
-/*public function postComment($postId, $author, $comment)
-    {
-        $db = $this->dbConnect();
-        $Comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?,?,?, NOW())');
-        $affectedLines = $Comments->execute(array(
-            $postId,
-            $author,
-            $comment
-        ));
-        
-        return $affectedLines;
-    }*/
 
+   
+    
     /**
      *
      * @param int $postId
@@ -126,18 +93,43 @@ class CommentManager extends Manager
             'id' => $id
         ));
     }
+
+    /**
+     *
+     * @param int $id
+     * @param int $repport
+     * @return boolean
+     */
+    public function reportComments($repport)
+    {
+        $db = $this->dbconnect();
+        $repportcom = $db->prepare('UPDATE comments SET repport=:repport WHERE id=:repport ');
+        $repporting = $repportcom->execute(array(
+            
+            'repport' => $_GET['repport']
+        ));
+        // var_dump($repporting);die;
+        return $repporting;
+    }
     
-      public function reportComments($id)
-      {
-      $db = $this->dbconnect();
-      $inputcomment = $db->prepare('UPDATE comments SET repport=? WHERE id=? ');
-      $repporting = $inputcomment->execute(array(
-      $repport
-      ));
-     
-      return $repporting;
-      }
-     
+    public function reportShow()
+    {
+        $db = $this->dbConnect();
+        $comments = $db->query('SELECT id, post_id, repport, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE repport >0 ');
+        return $comments;
+    }
+    
+   public function reportbacks($id,$repport)
+   {
+       $db = $this->dbconnect();
+       $back = $db->prepare('UPDATE comments SET repport=:repport WHERE id=:id ');
+       $repportingback = $back->execute(array(
+           'id'=>$_GET['id'],
+           'repport' => NULL
+       ));
+       // var_dump($repporting);die;
+       return $repportingback;
+   }
 }
 
 

@@ -39,7 +39,7 @@ function editshow($id)
 {
     $postmanager = new PostManager();
     $currentPost = $postmanager->getPost($id);
-    
+    //var_dump($currentPost);die;
     require ('view/backend/traitement_text.php');
 }
 
@@ -75,13 +75,34 @@ function commentSupression($id)
     $supressioncomment = $commentManager->supressioncomments($id);
     header('Location: index.php?action=gestionPosts');
 }
-function reportcomment($id)
+function reportcomment($id,$repport)
 {
     $commentManager = new CommentManager();
-    $commentReport = $commentManager->reportComments($id);
-    var_dump($commentReport);die;
+    $commentReport = $commentManager->reportComments($repport);
+    //echo $repport;
+    
+    //var_dump($commentReport);die;
     header('Location: index.php?action=post&id=' . $id);
 }
+
+function gestionrepport()
+{
+    $commentManager = new CommentManager();
+    $commentReport = $commentManager->reportShow();
+    //var_dump($commentReport);die;
+    require('view/backend/repportGestion.php');
+}
+
+function comeBackComment($id, $repport)
+{
+    $commentManager = new CommentManager();
+    $Repportback = $commentManager->reportbacks($id,$repport);
+    //echo $id;
+    //echo $repport;
+    //var_dump($Repportback);die;
+    header('Location: index.php?action=gestionrepport');
+}
+
 function gestionPosts()
 {
     

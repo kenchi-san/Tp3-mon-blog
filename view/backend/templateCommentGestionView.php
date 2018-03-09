@@ -24,11 +24,11 @@
 					<div class="row">
 						<div class="col col-xs-6">
 							<h3 class="panel-title">Paneau de gestion des commentaires</h3>
-						<a href=" index.php?action=gestionPosts">Retour a la page de Modération: </a>
+						<a href=" index.php?action=gestionPosts">Retour Ã  la page de ModÃ©ration: </a>
 						</div>
 						<div class="col col-xs-6 text-right">
 							<!--  <a href="index.php?action=addComment"><button
-									type="button" class="btn btn-sm btn-primary btn-create">créer un commentaire</button></a>-->
+									type="button" class="btn btn-sm btn-primary btn-create">crï¿½er un commentaire</button></a>-->
 						</div>
 					</div>
 				</div>
@@ -38,13 +38,14 @@
 							<tr>
 								<th><em class="fa fa-cog"></em></th>
 								<th class="hidden-xs">ID</th>
-								<th>date de céation</th>
+								<th>date de cï¿½ation</th>
 								<th>titre</th>
 								<th>contenu</th>
 								
 							</tr>
 						</thead>
 <?php echo $adminComment;?>
+
 </table>
 <div class="panel-body">
 					<table class="table table-striped table-bordered table-list">
@@ -52,7 +53,7 @@
 							<tr>
 								<th><em class="fa fa-cog"></em></th>
 								<th class="hidden-xs">ID</th>
-								<th>date de céation</th>
+								<th>date de cï¿½ation</th>
 								<th>auteur</th>
 								<th>commentaires</th>
 								

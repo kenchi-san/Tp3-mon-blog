@@ -8,8 +8,8 @@ while ( $data=$listcourent->fetch())
 <tbody>
 <tr>
 <td align="center">
-<a class="btn btn-default" href="index.php?action=editshow&post_id=<?= $data['id']; ?>"><em class="fa fa-pencil"></em></a>
-<a class="btn btn-danger" href="index.php?action=postSupression&post_id=<?=$data['id'];?>"><em class="fa fa-trash"></em></a>
+<a class="btn btn-default" href="index.php?action=editshow&id=<?= $_GET['id']=$data['id']; ?>"><em class="fa fa-pencil"></em></a>
+<a class="btn btn-danger" href="index.php?action=postSupression&id=<?=$_GET['id']=$data['id'];?>"><em class="fa fa-trash"></em></a>
 </td>
 <td class="hidden-xs"><?= $data['id']?></td>
 <td><?= $data['title']?></td>

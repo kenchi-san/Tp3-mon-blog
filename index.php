@@ -69,7 +69,17 @@ switch ($action) {
         
         //envoi le le commentaire repporté dans le backoffice
     case 'reportcomment':
-        reportcomment($_GET['id']);
+        reportcomment($_GET['id'],$_GET['repport']);
+        break;
+        
+        //envoi les repports sur la page d'administration
+    case 'gestionrepport':
+        gestionrepport();
+        break;
+        
+        //enlève les repports inutiles
+    case 'comeBackComment':
+        comeBackComment($_GET['id'], $_GET['repport']);
         break;
         
     // montre la page de connexion

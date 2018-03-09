@@ -20,20 +20,16 @@
 		<div class="col-md-10 col-md-offset-1">
 
 			<div class="panel panel-default panel-table">
-			
-			<a href="index.php?action=listPost"><button
-									type="button" class="btn btn-sm btn-primary btn-create">retour à la page d'acceuil</button></a>
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col col-xs-6">
-							<h3 class="panel-title">Paneau de gestion des billets</h3>
-						
+							<h3 class="panel-title">Paneau de gestion des commentaires</h3>
+							<a href=" index.php?action=gestionPosts">Retour à la page de
+								Modération: </a>
 						</div>
 						<div class="col col-xs-6 text-right">
-						<a href="index.php?action=gestionrepport"><button type="button" class="btn btn-info">articles signalés</button></a>
-							<a href="view/backend/additionalPostView.php"><button
-									type="button" class="btn btn-sm btn-primary btn-create">nouvelle
-									article</button></a>
+							<!--  <a href="index.php?action=addComment"><button
+									type="button" class="btn btn-sm btn-primary btn-create">cr�er un commentaire</button></a>-->
 						</div>
 					</div>
 				</div>
@@ -43,34 +39,20 @@
 							<tr>
 								<th><em class="fa fa-cog"></em></th>
 								<th class="hidden-xs">ID</th>
+								<th>date de création</th>
 								<th>titre</th>
 								<th>contenu</th>
+
 							</tr>
 						</thead>
-<?php echo $adminBillet;?>
-</table>
 
-				</div>
-				<div class="panel-footer">
-					<div class="row">
-						<div class="col col-xs-4">Page 1 of 5</div>
-						<div class="col col-xs-8">
-							<ul class="pagination hidden-xs pull-right">
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-							</ul>
-							<ul class="pagination visible-xs pull-right">
-								<li><a href="#">�</a></li>
-								<li><a href="#">�</a></li>
-							</ul>
-						</div>
-					</div>
+<?php echo $adminrepport;?>
+</table>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
+
+
+
