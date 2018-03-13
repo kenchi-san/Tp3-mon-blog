@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+//session_start();
 
 require ('controler/frontend.php');
 require ('controler/backend.php');
@@ -29,6 +29,7 @@ switch ($action) {
         
     // affichage des billets et des commentaires dans le backend
     case 'postAdmin':
+        
         postAdmin();
         break;
            
@@ -93,7 +94,10 @@ switch ($action) {
             connectionMember($_POST['username'], $_POST['pass']);
         }
         break;
-        
+        //deconnection session
+   case 'logOut':
+        logOut();
+        break;
     // affichage des billets dans la page admin
     case 'gestionPosts':
         gestionPosts();

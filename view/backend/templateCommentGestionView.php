@@ -38,7 +38,7 @@
 							<tr>
 								<th><em class="fa fa-cog"></em></th>
 								<th class="hidden-xs">ID</th>
-								<th>date de c�ation</th>
+								<th>date de création</th>
 								<th>titre</th>
 								<th>contenu</th>
 								
@@ -53,7 +53,7 @@
 							<tr>
 								<th><em class="fa fa-cog"></em></th>
 								<th class="hidden-xs">ID</th>
-								<th>date de c�ation</th>
+								<th>date de création</th>
 								<th>auteur</th>
 								<th>commentaires</th>
 								

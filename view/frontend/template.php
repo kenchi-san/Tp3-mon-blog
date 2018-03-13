@@ -1,3 +1,19 @@
+<?php 
+session_start();
+require('model/MembersManager.php');
+$connection='<a href="index.php?action=displaylogin">Se
+    connecter</a>';
+$connection='<a href="index.php?action=gestionPosts">Revenir à la page d\'administration</a>';
+if (MembersManager::checkSession()){
+    $connection;
+}
+else{
+    $connection;
+   
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,10 +23,11 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>le blog de l'�crivain</title>
+<title>le blog de l'écrivain</title>
 
 <!-- Bootstrap core CSS -->
-<link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="public/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- Custom fonts for this template -->
 <link href="public/vendor/font-awesome/css/font-awesome.min.css"
@@ -50,8 +67,8 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					
-					<li class="nav-item"><a href="index.php?action=displaylogin">se connecter</a></li>
+<li class="nav-item"><?=$connection;?></li>
+					 
 				</ul>
 			</div>
 		</div>
@@ -81,11 +98,8 @@
 				<?php echo $content;?>
 					
 				</div>
-				
-				<!-- Pager -->
-				<div class="clearfix">
-					<a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-				</div>
+
+
 			</div>
 		</div>
 	</div>
@@ -102,33 +116,19 @@
 
 </body>
 <!-- Footer -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<ul class="list-inline text-center">
-						<li class="list-inline-item"><a href="#"> <span
-								class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-						<li class="list-inline-item"><a href="#"> <span
-								class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-						<li class="list-inline-item"><a href="#"> <span
-								class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-github fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-					</ul>
-					<p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
-				</div>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<ul class="list-inline text-center">
+					
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; Merveilleux site 2018</p>
 			</div>
 		</div>
-	</footer>
+	</div>
+</footer>
 
-	
+
 
 </html>

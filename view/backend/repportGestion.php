@@ -8,7 +8,7 @@ while ($repports = $commentReport->fetch(PDO::FETCH_ASSOC)) {
 <tr>
 <td align="center">
 
-<a class="btn btn-default" href="index.php?action=comeBackComment&id=<?= $_GET['id']=$repports['id']; ?>&repport=<?= $repports['id']; ?>"><em class="fa fa-circle"></em></a>
+<a class="btn btn-default" href="index.php?action=comeBackComment&id=<?= $repports['id']; ?>"><em class="fa fa-circle"></em></a>
 <a class="btn btn-default" href="index.php?action=editShowComment&id=<?= $_GET['id']=$repports['id']; ?>"><em class="fa fa-pencil"></em></a>
 <a class="btn btn-danger" href="index.php?action=commentSupression&id=<?= $_GET['id']=$repports['id'];?>"><em class="fa fa-trash"></em></a>
 </td>

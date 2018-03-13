@@ -24,8 +24,8 @@
 				</div>
 
 				<div class="text-right p-t-8 p-b-31">
-					<a href="#"> mot de passe oublié </a><br>
-					<a href="index.php?action=listPosts">retour à la page d'acceuil</a>
+					
+					<a href="index.php?action=listPosts">retour Ã  la page d'acceuil</a>
 				</div>
 
 				<div class="container-login100-form-btn">

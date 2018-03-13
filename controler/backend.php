@@ -1,5 +1,5 @@
 <?php
-
+//require_once ('model/MembersManager.php');
 function postAdmin()
 {
     $postManager = new PostManager();
@@ -97,9 +97,7 @@ function comeBackComment($id, $repport)
 {
     $commentManager = new CommentManager();
     $Repportback = $commentManager->reportbacks($id,$repport);
-    //echo $id;
-    //echo $repport;
-    //var_dump($Repportback);die;
+   
     header('Location: index.php?action=gestionrepport');
 }
 
@@ -109,7 +107,7 @@ function gestionPosts()
     // MembersManager::destroySession();
     
     // if ( empty($_SESSION['auth']) ) {
-    MembersManager::checkSession();
+    //MembersManager::checkSession();
     
     $postsManager = new PostManager();
     $listcourent = $postsManager->getPosts();
@@ -118,13 +116,21 @@ function gestionPosts()
 }
 
 function connectionMember($username, $pass)
-{
+{ 
     $oMembersM = new MembersManager();
     $checkConnection = $oMembersM->connect($username, $pass);
-    
+   
     if ($checkConnection == TRUE) {
         header('Location:index.php?action=gestionPosts');
     } else {
-        echo "Votre mot de passe ou votre identifiant n'est pas correct. Veuillez v�rifier vos informations";
+        header('location:index.php?action=displaylogin');
+    } 
+    
+    function logOut()
+    {
+       new MembersManager();
+       MembersManager::checkSession();
+        require_once ('view/backend/logout.php');
+        
     }
 }

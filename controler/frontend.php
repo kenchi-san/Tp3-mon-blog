@@ -1,7 +1,7 @@
 <?php
 require_once ('model/PostManager.php');
 require ('model/CommentManager.php');
-require_once ('model/MembersManager.php');
+
 require ('model/function.php');
 
 function listPosts()
