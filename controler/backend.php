@@ -95,11 +95,11 @@ function commentSupression($id)
 
 function reportcomment($id, $repport)
 {
-    MembersManager::redirectToHomepageIfSessionNotExists();
+    
     
     $commentManager = new CommentManager();
     $commentReport = $commentManager->reportComments($repport);
-    header('Location: index.php?action=post&id=' . $id);
+    header('Location: index.php?action=post&id='. $id);
     exit();
 }
 
