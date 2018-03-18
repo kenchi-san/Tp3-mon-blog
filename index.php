@@ -1,6 +1,24 @@
 <?php
+// Initialisation de notre session
+session_start();
 
-//session_start();
+// Definition du path absolu
+define("ABSOLUTE_PATH", dirname(__FILE__));
+
+// Autoloader, chargement automatique des classes
+spl_autoload_register( 'custom_autoloader' );
+function custom_autoloader($className) {
+    $path      = ABSOLUTE_PATH .'/model/';
+    $filename  = $path .$className . '.php';
+    if ( file_exists($filename) ) {
+        require_once $filename;
+    }
+}
+
+
+
+//require 'model/MembersManager.php';
+//var_dump(  );
 
 require ('controler/frontend.php');
 require ('controler/backend.php');
@@ -29,7 +47,7 @@ switch ($action) {
         
     // affichage des billets et des commentaires dans le backend
     case 'postAdmin':
-        
+        MembersManager::redirectToHomepageIfSessionNotExists();        
         postAdmin();
         break;
            

@@ -1,5 +1,4 @@
 <?php
-require_once ('model/Manager.php');
 
 class MembersManager extends Manager
 {
@@ -13,7 +12,7 @@ class MembersManager extends Manager
      */
     public function connect($username, $pass)
     {
-        $db = $this->dbconnect();
+        $db   = $this->dbconnect();
         $pwdi = $db->prepare('SELECT id, pseudo, mail FROM members where pseudo=:pseudo AND pass=:pass');
         $pwdi->execute(array(
             'pseudo' => $_POST['username'],
@@ -21,7 +20,7 @@ class MembersManager extends Manager
         ));
         $result = $pwdi->fetch(PDO::FETCH_ASSOC);
         $pwdi->closeCursor(); // Fermeture curseur
-        if (! empty($result)) {
+        if (! empty($result)) {            
             $this->_sessionSaveData($result);
             return true;
         } else {
@@ -34,21 +33,38 @@ class MembersManager extends Manager
      *
      * @param array $result
      */
-   private function _sessionSaveData($result)
+    private function _sessionSaveData($result)
     {
         if (! empty($result)) {
             $_SESSION['auth'] = $result;
+            
         }
     }
 
-    public static function checkSession()
-    {
-        if (empty($_SESSION['auth'])) {
-            FALSE;
+    
+    
+    
+    /**
+     * Vérifie si une clé de session existe pour clé "auth"
+     */
+    public static function checkIfSessionExists()
+    {        
+        if ( empty($_SESSION['auth']) ) {
+            return false;            
         } else {
-            TRUE;
+            return true;
         }
     }
+    
+    public static function redirectToHomepageIfSessionNotExists()
+    {
+        if ( self::checkIfSessionExists() == false ) {
+            header('Location: index.php');
+            exit;
+        }
+       
+    }
 }
+
 
 

@@ -1,19 +1,3 @@
-<?php 
-session_start();
-require('model/MembersManager.php');
-$connection='<a href="index.php?action=displaylogin">Se
-    connecter</a>';
-$connection='<a href="index.php?action=gestionPosts">Revenir à la page d\'administration</a>';
-if (MembersManager::checkSession()){
-    $connection;
-}
-else{
-    $connection;
-   
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -67,8 +51,23 @@ else{
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-<li class="nav-item"><?=$connection;?></li>
-					 
+					<li class="nav-item">						
+						<?php 
+						if ( MembersManager::checkIfSessionExists() == true ) {
+						    ?>
+						    <a href="index.php?action=gestionPosts">
+    							Administration
+    						</a>
+						    <?php 
+						} else {
+						    ?>
+						    <a href="index.php?action=displaylogin">
+    							Se connecter
+    						</a>
+						    <?php
+						}
+						?>						
+					</li>					 
 				</ul>
 			</div>
 		</div>
@@ -108,11 +107,11 @@ else{
 
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="public/vendor/jquery/jquery.min.js"></script>
+	<script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Custom scripts for this template -->
-	<script src="js/clean-blog.min.js"></script>
+	<script src="public/js/clean-blog.min.js"></script>
 
 </body>
 <!-- Footer -->

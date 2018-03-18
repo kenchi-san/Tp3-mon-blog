@@ -1,8 +1,4 @@
 <?php
-require_once ('model/PostManager.php');
-require ('model/CommentManager.php');
-
-require ('model/function.php');
 
 function listPosts()
 {
@@ -39,6 +35,7 @@ function addComment($postId, $author, $comment)
         die('Impossible d\'ajouter le commentaire !');
     } else {
         header('Location: index.php?action=post&id=' . $postId);
+        exit();
     }
 }
 

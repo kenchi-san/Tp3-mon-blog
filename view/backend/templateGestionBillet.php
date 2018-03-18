@@ -53,7 +53,7 @@
 
 				</div>
 				<div class="panel-footer">
-					<a href="index.php?action=logOut" class="btn btn-info btn-lg">
+					<a href="view/backend/logout.php" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </a>
 				</div>

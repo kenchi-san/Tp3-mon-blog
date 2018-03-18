@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title><?php $title = htmlspecialchars($post['title']); ?></title>
+<title><?php $title = $post['title']; ?></title>
 
 <!-- Bootstrap core CSS -->
 <link href="public/vendor/bootstrap/css/bootstrap.min.css"
