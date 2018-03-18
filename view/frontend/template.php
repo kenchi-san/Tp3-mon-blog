@@ -8,7 +8,9 @@
 <meta name="author" content="">
 
 <title>le blog de l'écrivain</title>
-
+<!--  thème enfant -->
+<link href="public/css/child.theme.css"
+	rel="stylesheet">
 <!-- Bootstrap core CSS -->
 <link href="public/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">

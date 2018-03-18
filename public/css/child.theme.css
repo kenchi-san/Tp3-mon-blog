@@ -1,0 +1,16 @@
+h3 p {
+  line-height: 1.5;
+  margin: 30px 0;
+  height: 131px;
+    overflow: hidden;
+}
+
+.ml-auto, .mx-auto{
+	
+	text-align: justify;
+}
+
+.td{
+	 height: 70%;
+    overflow: hidden;
+}

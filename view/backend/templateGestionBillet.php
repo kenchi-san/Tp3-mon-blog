@@ -1,4 +1,5 @@
-
+<link href="public/css/child.theme.css"
+	rel="stylesheet">
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -13,9 +14,12 @@
 	rel='stylesheet' type='text/css'>
 
 <div class="container">
+
 	<div class="row">
 
-		<p></p>
+		<p><a href="view/backend/logout.php" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a></p>
 
 
 		<div class="col-md-10 col-md-offset-1">
@@ -24,6 +28,7 @@
 			
 			<a href="index.php?action=listPost"><button
 									type="button" class="btn btn-sm btn-primary btn-create">retour à la page d'acceuil</button></a>
+									
 				<div class="panel-heading">
 					<div class="row">
 						<div class="col col-xs-6">
@@ -53,9 +58,7 @@
 
 				</div>
 				<div class="panel-footer">
-					<a href="view/backend/logout.php" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-        </a>
+					
 				</div>
 			</div>
 
