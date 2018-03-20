@@ -3,13 +3,14 @@ require_once ('model/Manager.php');
 
 class CommentManager extends Manager
 {
-/**
- * 
- * @param int $postId
- * @param string $author
- * @param string $comment
- * @return boolean
- */
+
+    /**
+     *
+     * @param int $postId
+     * @param string $author
+     * @param string $comment
+     * @return boolean
+     */
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
@@ -23,8 +24,6 @@ class CommentManager extends Manager
         return $affectedLines;
     }
 
-   
-    
     /**
      *
      * @param int $postId
@@ -111,25 +110,34 @@ class CommentManager extends Manager
         // var_dump($repporting);die;
         return $repporting;
     }
-    
+
     public function reportShow()
     {
         $db = $this->dbConnect();
         $comments = $db->query('SELECT id, post_id, repport, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE repport >0 ');
         return $comments;
     }
-    
-   public function reportbacks($id,$repport)
-   {
-       $db = $this->dbconnect();
-       $back = $db->prepare('UPDATE comments SET repport=:repport WHERE id=:id ');
-       $repportingback = $back->execute(array(
-           'id'=>$_GET['id'],
-           'repport' => NULL
-       ));
-       // var_dump($repporting);die;
-       return $repportingback;
-   }
+
+    public function reportbacks($id, $repport)
+    {
+        $db = $this->dbconnect();
+        $back = $db->prepare('UPDATE comments SET repport=:repport WHERE id=:id ');
+        $repportingback = $back->execute(array(
+            'id' => $_GET['id'],
+            'repport' => NULL
+        ));
+        // var_dump($repporting);die;
+        return $repportingback;
+    }
+
+    public static function checkifempty()
+    {
+        if (empty($_GET['id']) && empty($_POST['author']) && empty($_POST['comment'])) {
+            die('Impossible d\'ajouter le commentaire !');
+        } else {
+            return TRUE;
+        }
+    }
 }
 
 

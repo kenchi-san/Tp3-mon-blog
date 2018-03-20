@@ -15,8 +15,8 @@
 	<form action="index.php?action=commentEdition&id=<?=$_GET['id']?>"
 		method="post">
 		<div>
-			<label for="author">auteur</label><br /> <input type="text" id="author"
-				name="author" value="<?= $curentCom['author'] ?>">
+			<label for="author">auteur</label><br /> <input type="text"
+				id="author" name="author" value="<?= $curentCom['author'] ?>">
 		</div>
 		<div>
 			<label for="comment">article</label><br />

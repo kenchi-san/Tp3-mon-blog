@@ -9,8 +9,7 @@
 
 <title>le blog de l'écrivain</title>
 <!--  thème enfant -->
-<link href="public/css/child.theme.css"
-	rel="stylesheet">
+<link href="public/css/child.theme.css" rel="stylesheet">
 <!-- Bootstrap core CSS -->
 <link href="public/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -54,22 +53,18 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">						
-						<?php 
-						if ( MembersManager::checkIfSessionExists() == true ) {
-						    ?>
-						    <a href="index.php?action=gestionPosts">
-    							Administration
-    						</a>
-						    <?php 
-						} else {
-						    ?>
-						    <a href="index.php?action=displaylogin">
-    							Se connecter
-    						</a>
+						<?php
+    if (MembersManager::checkIfSessionExists() == true) {
+        ?>
+						    <a href="index.php?action=gestionPosts"> Administration </a>
 						    <?php
-						}
-						?>						
-					</li>					 
+    } else {
+        ?>
+						    <a href="index.php?action=displaylogin"> Se connecter </a>
+						    <?php
+    }
+    ?>						
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -122,9 +117,10 @@
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
 				<ul class="list-inline text-center">
-					
+
 				</ul>
-				<p class="copyright text-muted">Copyright &copy; Merveilleux site 2018</p>
+				<p class="copyright text-muted">Copyright &copy; Merveilleux site
+					2018</p>
 			</div>
 		</div>
 	</div>

@@ -1,20 +1,20 @@
 
 <?php ob_start(); ?>
 <?php
-while ( $data=$listcourent->fetch())
-{
-?>
+while ($data = $listcourent->fetch()) {
+    ?>
 
 <tbody>
-<tr>
-<td align="center">
-<a class="btn btn-default" href="index.php?action=editshow&id=<?= $_GET['id']=$data['id']; ?>"><em class="fa fa-pencil"></em></a>
-<a class="btn btn-danger" href="index.php?action=postSupression&id=<?=$_GET['id']=$data['id'];?>"><em class="fa fa-trash"></em></a>
-</td>
-<td class="hidden-xs"><?= $data['id']?></td>
-<td><?= $data['title']?></td>
- <td><a href="index.php?action=postAdmin&id=<?= $data['id']?>"><?= $data['content']?></a></td>
-</tr>
+	<tr>
+		<td align="center"><a class="btn btn-default"
+			href="index.php?action=editshow&id=<?= $_GET['id']=$data['id']; ?>"><em
+				class="fa fa-pencil"></em></a> <a class="btn btn-danger"
+			href="index.php?action=postSupression&id=<?=$_GET['id']=$data['id'];?>"><em
+				class="fa fa-trash"></em></a></td>
+		<td class="hidden-xs"><?= $data['id']?></td>
+		<td><?= $data['title']?></td>
+		<td><a href="index.php?action=postAdmin&id=<?= $data['id']?>"><?= $data['content']?></a></td>
+	</tr>
 </tbody>
 
 <?php

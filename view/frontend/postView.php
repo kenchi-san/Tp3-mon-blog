@@ -57,13 +57,14 @@
 				<p>
 					<em>le <?= $post['creation_date_fr'] ?></em>
 				</p>
-				
-						<p><?= nl2br($post['content']) ?></p>
-						<div class="container">
+
+				<p><?= nl2br($post['content']) ?></p>
+				<div class="container">
 					<div class="row">
-					<a href="index.php"><button
-									type="button" class="btn btn-sm btn-primary btn-create">Retour à la liste des billets</button></a>
-						
+						<a href="index.php"><button type="button"
+								class="btn btn-sm btn-primary btn-create">Retour à la liste des
+								billets</button></a>
+
 					</div>
 				</div>
 			</div>
@@ -78,7 +79,10 @@ while ($comment = $comments->fetch()) {
     ?>
 <p>
 		<strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-	<p><?= nl2br($comment['comment']) ?><a href="index.php?action=reportcomment&id=<?=$_GET['id']?>&repport=<?=$comment['id']?>" ><button type="button" class="btn btn-danger">repport</button></a></p>
+	<p><?= nl2br($comment['comment']) ?><a
+			href="index.php?action=reportcomment&id=<?=$_GET['id']?>&repport=<?=$comment['id']?>"><button
+				type="button" class="btn btn-danger">repport</button></a>
+	</p>
 	
 <?php
 }
@@ -87,16 +91,16 @@ while ($comment = $comments->fetch()) {
 		method="post">
 		<div>
 			<label for="author">Auteur</label><br /> <input type="text"
-				id="author" name="author" />
+				id="author" name="author" required />
 		</div>
 		<div>
 			<label for="comment">Commentaire</label><br />
-			<textarea id="comment" name="comment"></textarea>
+			<textarea id="comment" name="comment" required></textarea>
 		</div>
 		<div>
 			<input type="submit" />
 		</div>
-		
+
 	</form>
 <?php $content = ob_get_clean(); ?>
 
