@@ -53,12 +53,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-				<p><?= $post['title'] ?></p>
-				<p>
-					<em>le <?= $post['creation_date_fr'] ?></em>
-				</p>
+				<p><?= $post['title'] ?><br /> <em>le <?= $post['creation_date_fr'] ?></em>
+					<br />
 
-				<p><?= nl2br($post['content']) ?></p>
+				<?= nl2br($post['content']) ?>
+				
+				
+				
+				
+				
+				
 				<div class="container">
 					<div class="row">
 						<a href="index.php"><button type="button"
@@ -77,9 +81,10 @@
 <?php
 while ($comment = $comments->fetch()) {
     ?>
-<p>
-		<strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-	<p><?= nl2br($comment['comment']) ?><a
+
+		<strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
+	<p><?= nl2br($comment['comment']) ?><br />
+		<a
 			href="index.php?action=reportcomment&id=<?=$_GET['id']?>&repport=<?=$comment['id']?>"><button
 				type="button" class="btn btn-danger">repport</button></a>
 	</p>

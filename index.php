@@ -17,8 +17,7 @@ function custom_autoloader($className)
     }
 }
 
-// require 'model/MembersManager.php';
-// var_dump( );
+
 
 require ('controler/frontend.php');
 require ('controler/backend.php');
@@ -36,7 +35,7 @@ switch ($action) {
     
     // rajoute un commentaire a un billet
     case 'addComment':
-        CommentManager::checkifempty();
+       CommentManager::checkifempty();
         addComment($_GET['id'], $_POST['author'], $_POST['comment']);
         break;
     

@@ -132,11 +132,9 @@ class CommentManager extends Manager
 
     public static function checkifempty()
     {
-        if (empty($_GET['id']) && empty($_POST['author']) && empty($_POST['comment'])) {
+        if (empty($_POST['author']) && empty($_POST['comment'])) {
             die('Impossible d\'ajouter le commentaire !');
-        } else {
-            return TRUE;
-        }
+        } 
     }
 }
 

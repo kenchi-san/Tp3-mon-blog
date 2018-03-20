@@ -26,15 +26,13 @@
 
 <!-- Custom styles for this template -->
 <link href="public/css/clean-blog.min.css" rel="stylesheet">
-<script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-<script>
-          
-          tinymce.init({
-            selector: '#comment'
-          });
-        </script>
+<script src='public/https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+    <script type="text/javascript">
+        tinyMCE.init({
+            	selector: '#comment'
+        });
+     </script>
 
-<!-- <link rel="stylesheet" href="public/css/css_blog.css"> -->
 </head>
 
 <body>
