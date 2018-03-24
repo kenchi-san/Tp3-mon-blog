@@ -35,7 +35,6 @@ switch ($action) {
     
     // rajoute un commentaire a un billet
     case 'addComment':
-       CommentManager::checkifempty();
         addComment($_GET['id'], $_POST['author'], $_POST['comment']);
         break;
     

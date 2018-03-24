@@ -1,8 +1,6 @@
 <?php ob_start(); ?>
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -28,7 +26,13 @@
 
 <!-- Custom styles for this template -->
 <link href="public/css/clean-blog.min.css" rel="stylesheet">
+<script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
 
+<script type="text/javascript">
+        tinyMCE.init({
+            	selector: '#comment'
+        });
+     </script>
 </head>
 
 <body>
@@ -53,10 +57,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-				<p><?= $post['title'] ?><br /> <em>le <?= $post['creation_date_fr'] ?></em>
+				<p><?= $post['title'] ?><br /> <em>a était publié le <?= $post['creation_date_fr'] ?></em>
 					<br />
 
 				<?= nl2br($post['content']) ?>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 				
@@ -83,8 +105,7 @@ while ($comment = $comments->fetch()) {
     ?>
 
 		<strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
-	<p><?= nl2br($comment['comment']) ?><br />
-		<a
+	<p><?= nl2br($comment['comment']) ?><br /> <a
 			href="index.php?action=reportcomment&id=<?=$_GET['id']?>&repport=<?=$comment['id']?>"><button
 				type="button" class="btn btn-danger">repport</button></a>
 	</p>
@@ -92,15 +113,14 @@ while ($comment = $comments->fetch()) {
 <?php
 }
 ?>
-<form action="index.php?action=addComment&id=<?= $_GET['id'] ?>"
-		method="post">
+<form action="index.php?action=addComment&id=<?= $_GET['id'] ?>" name="formComment" method="post">
 		<div>
 			<label for="author">Auteur</label><br /> <input type="text"
 				id="author" name="author" required />
 		</div>
 		<div>
 			<label for="comment">Commentaire</label><br />
-			<textarea id="comment" name="comment" required></textarea>
+			<textarea id="comment" name="comment"></textarea>
 		</div>
 		<div>
 			<input type="submit" />
