@@ -29,7 +29,7 @@
 
 				<a href="index.php?action=listPost"><button type="button"
 						class="btn btn-sm btn-primary btn-create">retour à la page
-						d'acceuil</button></a>
+						d'accueil</button></a>
 
 				<div class="panel-heading">
 					<div class="row">
@@ -39,9 +39,9 @@
 						</div>
 						<div class="col col-xs-6 text-right">
 							<a href="index.php?action=gestionrepport"><button type="button"
-									class="btn btn-info">Modération des commentaires repportés</button></a>
+									class="btn btn-info">Modération des commentaires reportés</button></a>
 							<a href="view/backend/additionalPostView.php"><button
-									type="button" class="btn btn-sm btn-primary btn-create">nouvelle
+									type="button" class="btn btn-sm btn-primary btn-create">nouvel
 									article</button></a>
 						</div>
 					</div>

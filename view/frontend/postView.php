@@ -57,31 +57,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-				<p><?= $post['title'] ?><br /> <em>a était publié le <?= $post['creation_date_fr'] ?></em>
+				<p><?= $post['title'] ?><br /> <em>a été publié le <?= $post['creation_date_fr'] ?></em>
 					<br />
 
 				<?= nl2br($post['content']) ?>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				
 				
 				
@@ -107,13 +86,14 @@ while ($comment = $comments->fetch()) {
 		<strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
 	<p><?= nl2br($comment['comment']) ?><br /> <a
 			href="index.php?action=reportcomment&id=<?=$_GET['id']?>&repport=<?=$comment['id']?>"><button
-				type="button" class="btn btn-danger">repport</button></a>
+				type="button" class="btn btn-danger">report</button></a>
 	</p>
 	
 <?php
 }
 ?>
-<form action="index.php?action=addComment&id=<?= $_GET['id'] ?>" name="formComment" method="post">
+<form action="index.php?action=addComment&id=<?= $_GET['id'] ?>"
+		name="formComment" method="post">
 		<div>
 			<label for="author">Auteur</label><br /> <input type="text"
 				id="author" name="author" required />
